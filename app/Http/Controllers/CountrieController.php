@@ -2,21 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Book;
-use App\Models\User;
+use App\Models\Countrie;
 use Illuminate\Http\Request;
 
-class BookController extends Controller
+class CountrieController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-    //    $book = Book::with('user')->get();
-    //    return $book; 
-        $user = User::find(1);
-        
+        $country = Countrie::with('books')->get();
+
+        return $country;
     }
 
     /**
@@ -24,13 +22,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        $book = new Book([
-            'name' => 'My Book',
-            'description' => 'No dessssssssssssssssssssssfffffdgfh',
-            'user_id' => 1
-        ]);
-
-        $book->save();
+        //
     }
 
     /**
@@ -44,7 +36,7 @@ class BookController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Book $book)
+    public function show(Countrie $countrie)
     {
         //
     }
@@ -52,7 +44,7 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Book $book)
+    public function edit(Countrie $countrie)
     {
         //
     }
@@ -60,7 +52,7 @@ class BookController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Book $book)
+    public function update(Request $request, Countrie $countrie)
     {
         //
     }
@@ -68,7 +60,7 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy(Countrie $countrie)
     {
         //
     }
