@@ -21,7 +21,13 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        $book = new Book([
+            'name' => 'My Book',
+            'description' => 'No dessssssssssssssssssssssfffffdgfh',
+            'user_id' => 1
+        ]);
+
+        $book->save();
     }
 
     /**

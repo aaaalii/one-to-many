@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->longText('description');
-            $table->foreignId('student_id')
+            $table->foreignId('user_id')
                     ->references('id')
                     ->on('users')
                     ->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

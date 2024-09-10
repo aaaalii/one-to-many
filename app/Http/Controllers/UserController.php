@@ -13,9 +13,15 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::with('book')->get();
-        //$users = User::with('book')->find(2);
-        return $users;
+        // $users = User::with('book')->get();
+        // //$users = User::with('book')->find(2);
+        // return $users;
+
+        //----------------has one of many--------------------
+
+        //$users = User::with('latestBook')->get();
+        $users = User::with('oldestBook')->get();
+        return $users[0];
     }
 
     /**
